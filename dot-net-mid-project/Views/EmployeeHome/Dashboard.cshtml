@@ -1,0 +1,52 @@
+﻿@model IEnumerable<dot_net_mid_project.Models.Order_Details>
+
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<style>
+    #frm {
+        width: 1200px;
+        margin: 20px 80px;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 50px blue;
+        background-color: transparent;
+        color: #34495e;
+    }
+</style>
+
+
+<h2 align="center" class="text text-primary">my assigned works</h2>
+
+    <table align="center" id="frm" class="table table-bordered">
+        <tr style="width: 145px; height: 45px; font-size: 20px;" class="text text-primary">
+            <td>Employee id</td>
+            <td>Service charge(per unit)</td>
+            <td>Uqantity</td>
+            <td>Work Details</td>
+            <td>Customer Details</td>
+            <td>Task Completed?</td>
+        
+        @foreach (var item in Model)
+        {
+        <tr style="width: 145px; height: 45px; font-size: 20px;" class="text text-success">
+        <td>@item.employee_id</td>
+        <td>@item.unit_price</td>
+        <td>@item.quantity</td>
+        <td>
+            <a class="btn btn-info" href="/EmployeeHome/AssignService/@item.service_id">See Details</a>
+        </td>
+        <td>
+            <a class="btn btn-info" href="/EmployeeHome/ServiceDetails/@item.order_id">See Details</a>
+        </td>
+
+        <td>
+            <a class="btn btn-success" href="/EmployeeHome/ChangeOrderStatus/@item.order_id">Yes</a>
+
+        </td>
+    </tr>
+        }
+    </table>
+        

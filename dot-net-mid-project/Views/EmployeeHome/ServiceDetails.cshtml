@@ -1,0 +1,27 @@
+﻿@model dot_net_mid_project.Models.Order 
+@{
+    ViewBag.Title = "ServiceDetails";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<h2 align="center" class="text text-primary">ServiceDetails</h2>
+<table class="table table-bordered">
+    <tr style="width: 145px; height: 45px; font-size: 20px;" class="text text-primary">
+        <td>Customer name</td>
+        <td>Customer Phone</td>
+        <td>Customer House</td>
+        <td>Road</td>
+        <td>Order Place Date</td>
+        <td>Servicing Address</td>
+        
+    </tr>
+    <tr style="width: 145px; height: 45px; font-size: 20px;" class="text text-success">
+        <td>@Model.User.name</td>
+        <td>@Model.User.phone</td>
+        <td>@Model.User.house</td>
+        <td>@Model.User.road</td>
+        <td>@Model.order_place_date</td>
+        <td>@Model.delevary_address</td>
+    </tr>
+</table>
+

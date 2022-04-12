@@ -1,0 +1,98 @@
+﻿@model dot_net_mid_project.Models.User
+@{
+    ViewBag.Title = "MyProfile";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<style>
+    #frm {
+        width: 600px;
+        margin: 20px 380px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 50px green;
+        background-color: transparent;
+        color: #34495e;
+    }
+    #txt {
+        width: 200px;
+        height: 35px;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+</style>
+
+<h2 class="text text-info" align="center">Personal information</h2>
+<form id="frm" method="post" action="/EmployeeHome/Update">
+    <table align="center">
+        <tr>
+            <td></td>
+            <td><input type="hidden" name="id" value="@Model.id" /></td>
+        </tr>
+
+        <tr>
+            <td style="width: 145px; height: 45px; font-size: 20px;">Name</td>
+            <td>
+                <input type="text" id="txt" class="form-control" name="name" value="@Model.name" />
+                @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td colspan=2><hr /></td>
+        </tr>
+        <tr>
+            <td style="width: 145px; height: 45px; font-size: 20px;">Phone</td>
+            <td>
+                <input id="txt" type="text" class="form-control" name="phone" value="@Model.phone" minlength="5" maxlength="13" required="required" />
+                @Html.ValidationMessageFor(m => m.phone, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td colspan=2><hr /></td>
+        </tr>
+        <tr>
+            <td style="width: 145px; height: 45px; font-size: 20px;">Email</td>
+            <td>
+                <input id="txt" type="text" class="form-control" name="email" value="@Model.email" required="required" />
+                @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td colspan=2><hr /></td>
+        </tr>
+        <tr>
+            <td style="width: 145px; height: 45px; font-size: 20px;">Password</td>
+            <td>
+                <input id="txt" type="password" class="form-control" name="password" value="@Model.password" minlength="4" maxlength="10" required="required" />
+                @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td colspan=2><hr /></td>
+        </tr>
+        <tr>
+            <td style="width: 145px; height: 45px; font-size: 20px;">House</td>
+            <td>
+                <input id="txt" type="text" class="form-control" name="house" value="@Model.house" minlength="4" maxlength="10" required="required" />
+                @Html.ValidationMessageFor(m => m.house, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td colspan=2><hr /></td>
+        </tr>
+        <tr>
+            <td style="width: 145px; height: 45px; font-size: 20px;">Road</td>
+            <td>
+                <input id="txt" type="text" class="form-control" name="road" value="@Model.road" maxlength="10" required="required" />
+                @Html.ValidationMessageFor(m => m.road, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td colspan=2><hr /></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="submit" style="width:200px;" class="btn btn-primary" value="Update" /></td>
+        </tr>
+    </table>
+</form>

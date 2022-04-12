@@ -1,0 +1,23 @@
+﻿@model dot_net_mid_project.Models.Service
+@{
+    ViewBag.Title = "AssignService";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<h2 align="center">AssignService</h2>
+<table class="table table-bordered">
+    <tr style="width: 145px; height: 45px; font-size: 20px;" align="center" class="text text-primary">
+        <td>Name</td>
+        <td>Details</td>
+        <td>Service Charge</td>
+        <td>Service type</td>
+        
+    </tr>
+    <tr style="width: 145px; height: 45px; font-size: 20px;" align="center" class="text text-success">
+        <td>@Model.name</td>
+        <td>@Model.details</td>
+        <td>@Model.price</td>
+        <td>@Model.type</td>
+    </tr>
+</table>
+

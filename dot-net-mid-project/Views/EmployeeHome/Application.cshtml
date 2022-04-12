@@ -1,0 +1,45 @@
+﻿@model dot_net_mid_project.Models.Application
+@{
+    ViewBag.Title = "Application";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<style>
+    #frm {
+        width: 600px;
+        margin: 20px 380px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 50px green;
+        background-color: transparent;
+        color: #34495e;
+    }
+</style>
+<h2 class="text-info" align="center">Fill up the form for taking leave</h2>
+<a href="/EmployeeHome/ApplicationHistory" class="btn btn-success">Application History</a>
+<form id="frm" action="/EmployeeHome/SentApplication" method="post">
+    <table border="1" height="400px"width="500px" align="center">
+        <tr align="center">
+            <td></td>
+            <td><input type="hidden" name="employee_id" class="form-control" value="@ViewBag.id"/></td>
+        </tr>
+        <tr style="width: 145px; height: 45px; font-size: 20px;" align="center">
+            <td>Leave Start Date</td>
+            <td><input type="date" name="start_date" class="form-control" value="dd.MM.yyyy" required="required"/></td>
+        </tr>
+        <tr style="width: 145px; height: 45px; font-size: 20px;" align="center">
+            <td>Leave End Date</td>
+            <td><input type="date" name="end_date" class="form-control" value="dd.MM.yyyy" required="required"/></td>
+        </tr>
+        <tr style="width: 145px; height: 45px; font-size: 20px;color:red;">
+        <td colspan="2" align="center">Why do you want to take leave?</td></tr>
+        <tr style="width: 145px; height: 45px; font-size: 20px;" align="center">
+            <td>Reason of taking leave:</td>
+            <td><textarea class="form-control" name="application_subject" required="required"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" class="btn btn-primary" value="Sent Leave Request"/></td>
+        </tr>
+    </table>
+</form>
+
